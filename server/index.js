@@ -5,7 +5,7 @@ const jwtToken = require("jsonwebtoken");
 app.use(express.json()); // for parsing application/json
 app.use(
   cors({
-    origin: ["http://localhost:5173"], //client or front end url base url
+    origin: ["https://peppy-bublanina-f30247.netlify.app"], //client or front end url base url
   })
 );
 const port = 2000; /// server running port
