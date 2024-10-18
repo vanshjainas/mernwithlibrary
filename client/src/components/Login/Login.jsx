@@ -14,26 +14,22 @@ function Login() {
 
   const formSubmit = async (e) => {
     e.preventDefault();
+    console.log("Form submitted", { email, password });
     if (!email || !password) {
       return alert("Please enter email and password");
     }
-    try {
-      const response = await axios.post(loginUrl, {
-        password: password,
-        email: email,
-      });
+    const response = await axios.post(loginUrl, {
+      password: password,
+      email: email,
+    });
 
-      const cookie = response.data.cookie;
-      localStorage.setItem("cookie", cookie);
-      setEmail("");
-      setPassword("");
-      alert("Login Successfull");
-      return navigate("/");
-    } catch (error) {
-      return alert("Incorrect email or password");
-    }
+    const cookie = response.data.cookie;
+    localStorage.setItem("cookie", cookie);
+    setEmail("");
+    setPassword("");
+    alert("Login Successfull");
+    return navigate("/");
   };
-
   useEffect(() => {
     if (cookie) {
       return navigate("/");

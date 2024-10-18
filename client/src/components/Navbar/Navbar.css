@@ -1,100 +1,139 @@
-.navbar {
+/* Modern theme with gradient background */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+  }
+  /* Styles for the logo image */
+.logo-name {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 40px; /* Adjust the width of the logo as needed */
+  height: 40px; /* Ensure the height maintains proportion */
+  margin-right: 10px; /* Space between the logo and the text */
+}
+
+.logo-name h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  animation: bounce 2s infinite;
+}
+
+/* ... other styles remain unchanged ... */
+
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f5f5f5;
-    padding: 10px
-}
-
-.web-name {
-    text-decoration: none;
-    font-size: 20px;
-    color: #000;
+    padding: 15px 30px;
+    /* background: linear-gradient(to bottom, #4c212a, #401c30, #301a33, #1c1933, #01172f); */
+    background-image: linear-gradient(to bottom, #08a4bd, #009dd2, #0092e7, #0083f5, #446df6);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
+  }
+  
+  /* Updated logo styles */
+  .logo-name h1 {
+    margin: 0;
+    font-size: 2rem; /* Increased font size for emphasis */
     font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.nav-links {
+    font-family: 'Montserrat', sans-serif; /* Changed font to Montserrat */
+    color: #fff;
+    animation: bounce 2s infinite; /* Added animation */
+  }
+  
+  .nav-links {
     display: flex;
-    gap: 10px;
-}
-
-
-
-.link-profile {
-    color: #1d6af8;
+    gap: 25px;
+  }
+  
+  .nav-links a {
+    color: #fff;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-    padding: 5px 10px;
-
-}
-
-.link-profile:hover {
-    text-decoration: underline;
-}
-
-.logout-btn {
-    padding: 5px 10px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    background: #fff;
+    color: #4a90e2;
+  }
+  
+  /* User dropdown styles */
+  .user-dropdown {
+    position: relative;
+  }
+  
+  .dropbtn {
     background-color: transparent;
+    color: #fff;
     border: none;
+    font-size: 1rem;
     cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-    text-align: start;
-    color: #1d6af8;
-}
-
-.logout-btn:hover {
-    color: #1d6af8;
-}
-
-.hamburger {
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background 0.3s ease;
+  }
+  
+  .dropbtn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .dropdown-content {
     display: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: #000000;
-    transition: all 0.3s;
-}
-
-@media (max-width: 768px) {
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .user-dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      padding: 20px;
+    }
+  
     .nav-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #333;
-        flex-direction: column;
-        width: 100%;
-        height: 100vh;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
+      flex-direction: column;
+      align-items: center;
     }
-
-    .nav-links.show {
-        transform: translateX(0);
+  
+    .nav-links a {
+      margin-bottom: 10px;
     }
-
-    .hamburger {
-        display: flex;
+  
+    .logo-name h1 {
+      font-size: 1.5rem;
     }
-
-    .hamburger.open .bar:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.open .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.open .bar:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-}
+  }
+  
